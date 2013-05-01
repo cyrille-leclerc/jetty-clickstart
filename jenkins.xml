@@ -81,6 +81,7 @@
     <groupId>org.example</groupId>
     <artifactId>hello-world</artifactId>
   </rootModule>
+  <goals>clean test compile assembly:single</goals>
   <mavenName>Maven 3.0.4</mavenName>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
