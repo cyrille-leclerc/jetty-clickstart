@@ -2,6 +2,8 @@
 
 Jetty is a fast lightweight servlet engine for the JVM.
 
+<img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/jetty.png"/>
+
 One of the best ways to deploy Jetty is to embed it in the app
 - produce an executable app that is ready to go.
 
@@ -10,7 +12,7 @@ Use this as a starting point if you like, works with any version of Jetty you ne
 
 Press the big button :
 
-<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/michaelneale/jetty-clickstart/master/clickstart.json"><img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
+<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/CloudBees-clickstart/jetty-clickstart/master/clickstart.json"><img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
 
 
 
