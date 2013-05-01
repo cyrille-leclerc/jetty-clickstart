@@ -11,7 +11,7 @@
     <name>Jetty HelloWorld</name>
 
     <properties>
-        <jettyVersion>7.2.0.v20101020</jettyVersion>
+        <jettyVersion>8.1.9.v20130131</jettyVersion>
     </properties>
 
     <dependencies>
