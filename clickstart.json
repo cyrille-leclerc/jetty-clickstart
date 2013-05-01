@@ -10,9 +10,11 @@
             "runtime.class": "org.example.HelloWorld"
         }
     },
+
+
     "build-with-jenkins": {
-        "template": {
-            "type": "maven",
+    "template": {
+            "type": "https://raw.github.com/michaelneale/jetty-clickstart/master/jenkins.xml",
             "options": {
             }
         }

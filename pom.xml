@@ -23,6 +23,7 @@
     </dependencies>
 
     <build>
+        <defaultGoal>clean test compile assembly:single</defaultGoal>
         <plugins>
             <plugin>
                 <!-- This plugin is needed for the servlet example -->
@@ -43,6 +44,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
+
                 <configuration>
                     <archive>
                         <manifest>
