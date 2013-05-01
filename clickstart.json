@@ -3,7 +3,10 @@
     "name": "Jetty on CloudBees",
     "source": "github",
     "description" : "Embedded Jetty server running on CloudBees JVM stack",
-    "icon" : "https://raw.github.com/CloudBees-community/maven_template/master/icon.png",
+    "icon" : "https://d3ko533tu1ozfq.cloudfront.net/clickstart/jetty.png",
+    "doc-url" : "https://github.com/CloudBees-community/jetty-clickstart/README.md",
+    "order" : 3,
+    "supported-by" : "community",
     "runtime": {
         "type": "java",
          "app-parameters" : {
