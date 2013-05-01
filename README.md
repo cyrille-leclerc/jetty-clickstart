@@ -8,6 +8,11 @@ One of the best ways to deploy Jetty is to embed it in the app
 That is what this does (and also shows it running on CloudBees with just a JVM).
 Use this as a starting point if you like, works with any version of Jetty you need.
 
+Press the big button :
+
+<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/michaelneale/jetty-clickstart/master/clickstart.json"><img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
+
+
 
 # Running locally during development
 
