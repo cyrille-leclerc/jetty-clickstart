@@ -1,0 +1,20 @@
+{
+    "id": "jetty_embedded",
+    "name": "Jetty on CloudBees",
+    "source": "github",
+    "description" : "Embedded Jetty server running on CloudBees JVM stack",
+    "icon" : "https://raw.github.com/CloudBees-community/maven_template/master/icon.png",
+    "runtime": {
+        "type": "java",
+         "app-parameters" : {
+            "runtime.class": "org.example.HelloWorld"
+        }
+    },
+    "build-with-jenkins": {
+        "template": {
+            "type": "maven",
+            "options": {
+            }
+        }
+    }
+}
