@@ -27,11 +27,42 @@ Press the big button :
 
 # Executable jar
 
-    mvn clean compile assembly:single
+    mvn clean package
     java -jar target/jetty9-embedded-clickstart-0.1-SNAPSHOT-jar-with-dependencies.jar
 
 You can also run that executable jar anywhere using java -jar... (it will default to port 8080 when not running in the cloud).
 
 
+# FAQ
 
+## Why using the Maven Goal `package` instead of `assembly:single`
+
+To make it easier, we configured maven to execute the goal `assembly:single` in the phase `package`.
+
+```xml
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <version>2.4</version>
+    <configuration>
+        <archive>
+            <manifest>
+                <mainClass>localdomain.localhost.jetty.Main</mainClass>
+            </manifest>
+        </archive>
+        <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+        </descriptorRefs>
+    </configuration>
+    <executions>
+        <execution>
+            <id>make-my-jar-with-dependencies</id>
+            <phase>package</phase>
+            <goals>
+                <goal>single</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+```
 

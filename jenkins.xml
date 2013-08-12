@@ -81,7 +81,7 @@
     <groupId>localdomain.localhost</groupId>
     <artifactId>jetty9-embedded-clickstart</artifactId>
   </rootModule>
-  <goals>clean test compile assembly:single</goals>
+  <goals>clean package</goals>
   <mavenName>Maven 3.0.4</mavenName>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
