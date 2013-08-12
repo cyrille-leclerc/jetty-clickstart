@@ -1,23 +1,23 @@
 {
-    "id": "jetty_embedded",
-    "name": "Jetty on CloudBees",
+    "id": "jetty9-embedded-clickstart",
+    "name": "Jetty 9 Embedded App",
     "source": "github",
-    "description" : "Embedded Jetty server running on CloudBees JVM stack",
-    "icon" : "https://d3ko533tu1ozfq.cloudfront.net/clickstart/jetty.png",
-    "doc-url" : "https://github.com/CloudBees-community/jetty-clickstart/README.md",
+    "description" : "Embedded Jetty 9 server running on CloudBees JVM stack",
+    "icon" : "https://raw.github.com/CloudBees-community/jetty9-embedded-clickstart/master/icon.png",
+    "doc-url" : "https://github.com/CloudBees-community/jetty9-embedded-clickstart/README.md",
     "order" : 3,
     "supported-by" : "community",
     "runtime": {
         "type": "java",
          "app-parameters" : {
-            "runtime.class": "org.example.HelloWorld"
+            "runtime.class": "localdomain.localhost.jetty.Main"
         }
     },
 
 
     "build-with-jenkins": {
     "template": {
-            "type": "https://raw.github.com/CloudBees-community/jetty-clickstart/master/jenkins.xml",
+            "type": "https://raw.github.com/CloudBees-community/jetty9-embedded-clickstart/master/jenkins.xml",
             "options": {
             }
         }

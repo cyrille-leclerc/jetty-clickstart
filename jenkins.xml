@@ -78,8 +78,8 @@
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <rootModule>
-    <groupId>org.example</groupId>
-    <artifactId>hello-world</artifactId>
+    <groupId>localdomain.localhost</groupId>
+    <artifactId>jetty9-embedded-clickstart</artifactId>
   </rootModule>
   <goals>clean test compile assembly:single</goals>
   <mavenName>Maven 3.0.4</mavenName>

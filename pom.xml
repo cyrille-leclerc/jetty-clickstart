@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.example</groupId>
-    <artifactId>hello-world</artifactId>
+    <groupId>localdomain.localhost</groupId>
+    <artifactId>jetty9-embedded-clickstart</artifactId>
     <version>0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Jetty HelloWorld</name>
+    <name>jetty9-embedded-clickstart</name>
 
     <properties>
-        <jettyVersion>8.1.9.v20130131</jettyVersion>
+        <jettyVersion>9.0.4.v20130625</jettyVersion>
     </properties>
 
     <dependencies>
@@ -27,7 +27,7 @@
         <plugins>
             <plugin>
                 <!-- This plugin is needed for the servlet example -->
-                <groupId>org.mortbay.jetty</groupId>
+                <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>${jettyVersion}</version>
             </plugin>
@@ -39,7 +39,7 @@
                     <execution><goals><goal>java</goal></goals></execution>
                 </executions>
                 <configuration>
-                    <mainClass>org.example.HelloWorld</mainClass>
+                    <mainClass>localdomain.localhost.jetty.Main</mainClass>
                 </configuration>
             </plugin>
             <plugin>
@@ -48,7 +48,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>org.example.HelloWorld</mainClass>
+                            <mainClass>localdomain.localhost.jetty.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
