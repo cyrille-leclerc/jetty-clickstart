@@ -15,14 +15,14 @@
  */
 package localdomain.localhost.jetty;
 
-import org.eclipse.jetty.server.Request;
-import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.server.*;
 import org.eclipse.jetty.server.handler.AbstractHandler;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Enumeration;
 
 /**
  * @author Michael Neale
@@ -31,8 +31,18 @@ import java.io.IOException;
 public class Main extends AbstractHandler {
 
     public static void main(String[] args) throws Exception {
-        Server server = new Server(Integer.parseInt(System.getProperty("app.port", "8080")));
+        Server server = new Server();
         server.setHandler(new Main());
+
+        // ADD SUPPORT FOR X-FORWARDED-FOR and X-FORWARDED-PROTO
+        HttpConfiguration httpConfiguration = new HttpConfiguration();
+        httpConfiguration.addCustomizer(new ForwardedRequestCustomizer());
+        HttpConnectionFactory httpConnectionFactory = new HttpConnectionFactory(httpConfiguration);
+        ServerConnector httpConnector = new ServerConnector(server, httpConnectionFactory);
+        httpConnector.setPort(Integer.parseInt(System.getProperty("app.port", "8080")));
+        server.addConnector(httpConnector);
+
+
         server.start();
         server.join();
     }
@@ -46,6 +56,18 @@ public class Main extends AbstractHandler {
         response.setContentType("text/html;charset=utf-8");
         response.setStatus(HttpServletResponse.SC_OK);
         baseRequest.setHandled(true);
+
+        System.out.println("request: " +
+                "url=" + request.getRequestURL() + ", " +
+                "remoteAddr=" + request.getRemoteAddr() + ", " +
+                "isSecure=" + request.isSecure());
+
+        Enumeration<String> headers = request.getHeaderNames();
+        while (headers.hasMoreElements()) {
+            String headerName = headers.nextElement();
+            String headerValue = request.getHeader(headerName);
+            System.out.println(headerName + ": " + headerValue);
+        }
 
 
         String html = "<html>" +
