@@ -11,7 +11,7 @@ Use this as a starting point if you like, works with any version of Jetty you ne
 
 Press the big button :
 
-<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/CloudBees-clickstart/jetty9-embedded-clickstart/master/clickstart.json"><img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
+<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/CloudBees-community/jetty9-embedded-clickstart/master/clickstart.json"><img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
 
 
 
