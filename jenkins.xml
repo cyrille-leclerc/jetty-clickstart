@@ -103,9 +103,12 @@
           <targets class="java.util.Collections$UnmodifiableRandomAccessList" resolves-to="java.util.Collections$UnmodifiableList">
             <c class="list">
               <com.cloudbees.plugins.deployer.impl.run.RunTargetImpl>
-                <artifact class="com.cloudbees.plugins.deployer.sources.WildcardPathDeploySource">
-                  <filePattern>target/*.jar</filePattern>
-                </artifact>
+                  <artifact class="com.cloudbees.plugins.deployer.sources.MavenArtifactDeploySource">
+                      <groupId>localdomain.localhost</groupId>
+                      <artifactId>jetty9-embedded-clickstart</artifactId>
+                      <classifier>jar-with-dependencies</classifier>
+                      <type>jar</type>
+                  </artifact>
                 <applicationId>${applicationName}</applicationId>
                 <applicationConfig/>
                 <apiEndPoint>https://api.cloudbees.com/api</apiEndPoint>
