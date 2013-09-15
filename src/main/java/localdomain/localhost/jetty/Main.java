@@ -25,24 +25,32 @@ import java.io.IOException;
 import java.util.Enumeration;
 
 /**
+ * Start a Jetty 9 Embedded App.
+ *
  * @author Michael Neale
  * @author <a href="mailto:cleclerc@cloudbees.com">Cyrille Le Clerc</a>
  */
 public class Main extends AbstractHandler {
 
     public static void main(String[] args) throws Exception {
+        // The "app.port" system property is injected by CloudBees Java ClickStack
+        // See http://developer.cloudbees.com/bin/view/RUN/Java+Container
+        int port = Integer.parseInt(System.getProperty("app.port", "8080"));
+
         Server server = new Server();
         server.setHandler(new Main());
 
-        // ADD SUPPORT FOR X-FORWARDED-FOR and X-FORWARDED-PROTO
+        // Add support for x-forwarded-for and x-forwarded-proto headers
+        // These headers are injected by the NGinx routing layer on CloudBees platform
         HttpConfiguration httpConfiguration = new HttpConfiguration();
         httpConfiguration.addCustomizer(new ForwardedRequestCustomizer());
+
         HttpConnectionFactory httpConnectionFactory = new HttpConnectionFactory(httpConfiguration);
         ServerConnector httpConnector = new ServerConnector(server, httpConnectionFactory);
-        httpConnector.setPort(Integer.parseInt(System.getProperty("app.port", "8080")));
+        httpConnector.setPort(port);
         server.addConnector(httpConnector);
 
-
+        // Start Jetty
         server.start();
         server.join();
     }
