@@ -11,7 +11,7 @@
     <name>jetty9-embedded-clickstart</name>
 
     <properties>
-        <jettyVersion>9.0.4.v20130625</jettyVersion>
+        <jettyVersion>9.0.5.v20130815</jettyVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
